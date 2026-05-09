@@ -6,20 +6,21 @@ public class Emprestimo {
 
     //atributos principais de um emprestimo...
     private int id;
-    private Livro livro;
-    private String nomeCliente;
+    private String tituloLivro;
+    private String nomeUsuario;
     private Date dataEmprestimo;
     private Date dataDevolucao;
+    private int LivroId;
+    private int UsuarioId;
 
     //construtor
     public Emprestimo() {
 
     }
 
-    public Emprestimo(int idEmprestimo, Livro livro, String nomeCliente) {
-        this.id = idEmprestimo;
-        this.livro = livro;
-        this.nomeCliente = nomeCliente;
+    public Emprestimo( int livroId, int usuarioId) {
+       this.LivroId = livroId;
+       this.UsuarioId = usuarioId;
     }
 
     //metodos especiais
@@ -32,20 +33,36 @@ public class Emprestimo {
         this.id = id;
     }
 
-    public Livro getLivro() {
-        return livro;
+    public String getTituloLivro() {
+        return tituloLivro;
     }
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
+    public void setTituloLivro(String tituloLivro) {
+        this.tituloLivro = tituloLivro;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getNomeUsuario() {
+        return nomeUsuario;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public int getLivroId() {
+        return LivroId;
+    }
+
+    public void setLivroId(int livroId) {
+        LivroId = livroId;
+    }
+
+    public int getUsuarioId() {
+        return UsuarioId;
+    }
+
+    public void setUsuarioId(int usuarioId) {
+        UsuarioId = usuarioId;
     }
 
     public Date getDataEmprestimo() {
@@ -65,4 +82,13 @@ public class Emprestimo {
     }
 
 
+    @Override
+    public String toString() {
+        return    " Emprestimo: "
+                +"\n Id: "+id
+                +"\n Livro: "+ tituloLivro
+                +"\n Usuario: " + nomeUsuario
+                +"\n Data de Emprestimo: "+dataEmprestimo
+                +"\n Data de Devolucao: "+dataDevolucao;
+    }
 }

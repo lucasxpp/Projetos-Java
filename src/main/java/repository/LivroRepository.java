@@ -116,8 +116,12 @@ public class LivroRepository implements LivrosDao {
         PreparedStatement st = null;
         ResultSet rs = null;
 
-        try{ st = conn.prepareStatement("SELECT * FROM livros "
-                                           + "WHERE id = ? " );
+        try{ st = conn.prepareStatement("SELECT livros.*, " +
+                "autores.id ," +
+                "autores.nome " +
+                "FROM livros " +
+                "INNER JOIN autores ON livros.autor_id = autores.id " +
+                "WHERE livros.id = ?" );
 
             st.setInt(1, id);
 
@@ -127,7 +131,6 @@ public class LivroRepository implements LivrosDao {
 
                 Autor aut = instantialAutor(rs); //está instanciando o obj aut para ser incrementado em livro.
                 Livro livro = instantialLivro(rs,aut); //está instanciando o obj livro
-
 
                 return livro;
             }

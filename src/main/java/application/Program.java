@@ -3,15 +3,16 @@ package application;
 
 
 import dao.AutorDao;
+import dao.EmprestimoDao;
 import dao.LivrosDao;
 import dao.UsuarioDao;
 import model.Autor;
+import model.Emprestimo;
 import model.Livro;
 import model.Usuario;
 import repository.AutorRepository;
 import repository.DaoFactoryRepository;
 import repository.LivroRepository;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -33,21 +34,27 @@ public class Program {
 
         System.out.println("=======================2 appplication: livro =======================");
 
-       Autor autor = auttdao.findById(1);
+       // Autor autor = auttdao.findById(1);
 
        LivrosDao livvdao = DaoFactoryRepository.createLivroR();
 
-       // Livro livro = new Livro(0,"Cronicas de gelo e fogo", autor, true);
-       //  livvdao.insert(livro);
+      //  Livro livro = new Livro(0,"Cronicas de gelo e fogo", autor, true);
+       // livvdao.insert(livro);
 
-       // System.out.println("inserted book.");
+        System.out.println("inserted book.");
 
-        System.out.println("=======================3 appplication: usuario =======================");
+       // System.out.println("=======================3 appplication: usuario =======================");
 
         UsuarioDao usdao = DaoFactoryRepository.createClientesR();
 
 
-        System.out.println("=======================4 appplication: Emprestimo =======================");
+       // System.out.println("=======================4 appplication: Emprestimo =======================");
+        EmprestimoDao emdao = DaoFactoryRepository.createEmprestimoR();
+
+        emdao.delete(1);
+        System.out.println("deleted!");
+
+
 
 
 

@@ -19,4 +19,8 @@ public class DaoFactoryRepository {
         return new LivroRepository(CN.getConnection());
     }
 
+    public static EmprestimoRepository createEmprestimoR(){
+        return new EmprestimoRepository(CN.getConnection());
+    }
+
 }
