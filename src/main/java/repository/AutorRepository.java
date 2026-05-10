@@ -1,6 +1,6 @@
 package repository;
 
-import dao.AutorDao;
+import repository.dao.AutorDao;
 import exceptions.DbException;
 import model.Autor;
 import java.sql.Connection;
@@ -156,6 +156,7 @@ public class AutorRepository implements AutorDao {
 
                }
                return list;
+
         }catch(SQLException e){
             throw new DbException(e.getMessage());
         }

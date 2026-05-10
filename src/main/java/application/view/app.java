@@ -1,4 +1,4 @@
 package application.view;
 
-public class MenuPrincipal {
+public class app {
 }

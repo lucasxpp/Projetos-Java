@@ -1,20 +1,17 @@
 package repository;
 
-import dao.LivrosDao;
+import repository.dao.LivrosDao;
 import exceptions.DbException;
 import model.Autor;
 import model.Livro;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LivroRepository implements LivrosDao {
 

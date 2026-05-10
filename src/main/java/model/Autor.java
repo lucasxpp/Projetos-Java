@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Autor {
@@ -49,6 +50,8 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Id: " + id + ", Nome: " +  nome ;
+        return    "Id: " + id
+                + "\nNome: " +  nome
+                + "\nData de nascimento: " + dataNascimento;
     }
 }

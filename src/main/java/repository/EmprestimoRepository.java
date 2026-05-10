@@ -1,10 +1,8 @@
 package repository;
 
-import dao.EmprestimoDao;
+import repository.dao.EmprestimoDao;
 import exceptions.DbException;
 import model.Emprestimo;
-import model.Livro;
-import model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,9 +61,11 @@ public class EmprestimoRepository implements EmprestimoDao {
 
         try{
              ps = conn.prepareStatement("UPDATE emprestimos "
-                                           +"SET data_devolucao = ?");
+                                           +"SET data_devolucao = ?"
+                                           + "WHERE id = ?");
 
              ps.setDate(1, java.sql.Date.valueOf(LocalDate.now().plusDays(10)));
+             ps.setInt(2, emprestimo.getId());
             //acredito que pegara a data no dia em que precisa renovar e aumentar +10 dias
             ps.executeUpdate();
 

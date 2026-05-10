@@ -1,7 +1,7 @@
 package repository;
 
-import dao.AutorDao;
-import dao.UsuarioDao;
+import repository.dao.AutorDao;
+import repository.dao.UsuarioDao;
 
 public class DaoFactoryRepository {
 

@@ -1,6 +1,6 @@
 package repository;
 
-import dao.UsuarioDao;
+import repository.dao.UsuarioDao;
 import exceptions.DbException;
 import model.Usuario;
 import java.sql.Connection;
@@ -56,17 +56,17 @@ public class UsuarioRepository implements UsuarioDao {
     }
 
     @Override
-    public void update(Usuario cliente) {
+    public void update(Usuario us) {
         PreparedStatement ps = null;
 
         try{
              ps = conn.prepareStatement("UPDATE usuario "
                                           +"SET nome = ?, email = ?"
-                                          +"WHERE id = ?");
+                                          +" WHERE id = ?");
 
-             ps.setString(1,cliente.getNome());
-             ps.setString(2,cliente.getEmail());
-             ps.setInt(3,cliente.getId());
+             ps.setString(1,us.getNome());
+             ps.setString(2,us.getEmail());
+             ps.setInt(3,us.getId());
 
              ps.executeUpdate(); //atualizando dados do usuario
 

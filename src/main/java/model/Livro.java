@@ -19,11 +19,11 @@ public class Livro {
 
     }
 
-    public Livro(int idLivro, String titulo, Autor autor, boolean disponivel) {
+    public Livro(int idLivro, String titulo, Autor autor) {
         this.id = idLivro;
         this.titulo = titulo;
         this.autor = autor;
-        this.disponivel = disponivel;
+        this.disponivel = true;
     }
 
     //metodos especiais de cada livro...
@@ -79,8 +79,9 @@ public class Livro {
 
     @Override
     public String toString() {
-        return    "   Informações do Livro: "
-                + "    Id: " + id + ", Titulo: " + titulo + ", Autor: " + autor
+        return    "   Informações do Livro: " + titulo
+                + "   Id: " + id
+                + "   Autor: " + autor
                 + "\n Data de Cadastro: " +  dataCadastro
                 + "\n Última Alteração: " + dataAlteracao;
     }
